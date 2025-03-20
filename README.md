@@ -97,3 +97,21 @@ ___
 </x-layout>
 
 ````
+___
+
+### 04 - Make a Pretty Layout Using TailwindCSS
+>laracasts/example/resources/views/Components/layout.blade.php
+````
+<html class="h-full bg-gray-100">
+    <head>
+        ... head content
+
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="h-full">
+        ...
+    </body>
+</html>
+
+````
+Uso do "Stacked Layouts" gratuito do TailwindCss, personalização, remoção de itens não utilizados e aplicação do {{slot}} e do componente "menu-link".
