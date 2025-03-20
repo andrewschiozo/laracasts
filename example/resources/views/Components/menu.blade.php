@@ -1,5 +1,5 @@
 <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
+    <x-menu-link href="/">Home</x-menu-link>
+    <x-menu-link href="/about">About</x-menu-link>
+    <x-menu-link href="/contact">Contact</x-menu-link>
 </nav>
