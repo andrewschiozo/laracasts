@@ -80,9 +80,7 @@ ___
 <html>
     <head></head>
     <body>
-        <nav>
-            ...links do menu
-        </nav>
+        <x-menu />
 
         <?php echo $slot;?> --> PHP
         ou
