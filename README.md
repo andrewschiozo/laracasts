@@ -71,3 +71,31 @@ Route::get('/array', function () {
 ````
 
 Arrays são convertidos para json no response.
+___
+
+### 03 - Create a Layout File Using Laravel Components
+
+>laracasts/example/resources/views/Components/layout.blade.php
+````
+<html>
+    <head></head>
+    <body>
+        <nav>
+            ...links do menu
+        </nav>
+
+        <?php echo $slot;?> --> PHP
+        ou
+        {{$slot}} --> recurso do blade
+    </body>
+</html>
+
+````
+
+>laracasts/example/resources/views/home.blade.php
+````
+<x-layout> --> recurso do blade
+    <h1>Home page</h1> --> slot inserido no template layout
+</x-layout>
+
+````
