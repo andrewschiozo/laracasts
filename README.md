@@ -32,3 +32,42 @@ Para testar:
 
 INFO  Server running on [http://127.0.0.1:8000].
 ___
+
+### 02 - Your First Route and View
+
+>laracasts/example/routes/web.php
+````
+Route::get('/', function () {
+    return view('welcome');
+});
+
+````
+
+
+>laracasts/example/resources/views/welcome.blade.php
+````
+<html>
+    <head></head>
+    <body>
+        <h1>Hello, world</h1>
+    </body>
+</html>
+
+````
+
+Testes de rotas com retorno de string, array e de view().
+>laracasts/example/routes/web.php
+````
+//Return string Foo, bar
+Route::get('/string', function () {
+    return 'Foo, bar';
+});
+
+//Return json {"foo":"bar"} with content-type: application/json
+Route::get('/array', function () {
+    return ['foo' => 'bar'];
+});
+
+````
+
+Arrays são convertidos para json no response.
