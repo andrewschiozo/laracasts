@@ -6,6 +6,6 @@
     <title>About Page</title>
 </head>
 <body>
-    <h1>Hello from the About Page.</h1>
+    <h1>Hello from the About Page. </h1>
 </body>
 </html>
