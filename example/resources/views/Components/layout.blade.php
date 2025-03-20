@@ -80,7 +80,7 @@
                     <img class="size-10 rounded-full" src="https://lh3.googleusercontent.com/ogw/AF2bZyg-kMq4CKJ9aj2PhBVl1gHdBDrztgMUS5UBxHEfAXJsFtVM=s32-c-mo" alt="">
                 </div>
                 <div class="ml-3">
-                    <div class="text-base/5 font-medium text-white">Andrews Chiozo</div>
+                    <div class="text-base/5 font-medium text-white">Andrews Costa Chiozo</div>
                     <div class="text-sm font-medium text-gray-400">andrewschiozo@gmail.com</div>
                 </div>
                 <button type="button" class="relative ml-auto shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
