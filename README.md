@@ -114,4 +114,4 @@ ___
 </html>
 
 ````
-Uso do "Stacked Layouts" gratuito do TailwindCss, personalização, remoção de itens não utilizados e aplicação do {{slot}} e do componente "menu-link".
+Uso do "Stacked Layouts" gratuito do TailwindCss, personalização, remoção de itens não utilizados. Aplicação do {{slot}} e do menu.
