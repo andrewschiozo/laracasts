@@ -115,3 +115,31 @@ ___
 
 ````
 Uso do "Stacked Layouts" gratuito do TailwindCss, personalização, remoção de itens não utilizados. Aplicação do {{slot}} e do menu.
+
+
+
+
+
+### 99 - Running
+````
+#Install Composer dependencies
+> composer install
+
+#Create and configure the .env file:
+> cp .env.example .env
+
+#Generate an application key: Laravel requires an application key for security.
+> php artisan key:generate
+
+#Run database migrations (if applicable)
+> php artisan migrate
+
+#Seed the database (optional)
+> php artisan db:seed
+
+#Link storage (optional, for file uploads)
+> php artisan storage:link
+
+#Start the local development server
+> php artisan serve
+````
