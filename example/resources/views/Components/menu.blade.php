@@ -1,4 +1,4 @@
-@php($menus = json_decode('[{"name": "Home", "url": "/home"}, {"name": "About", "url": "/about"}, {"name": "Contact", "url": "/contact"}, {"name": "Contact2", "url": "/contact/contact2"}]'))
+@php($menus = json_decode('[{"name": "Home", "url": "/home"}, {"name": "About", "url": "/about"}, {"name": "Contact", "url": "/contact"}]'))
 @php($classNavDevice = $attributes['device'] === 'mobile' ? 'space-y-1 px-2 pt-2 pb-3 sm:px-3' : '')
 
 <nav {{ $attributes }} class="{{ $classNavDevice }}">
