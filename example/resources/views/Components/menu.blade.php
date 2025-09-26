@@ -9,8 +9,6 @@
             href="/{{ $menu->url }}"
             :active="request()->routeIs($menu->url)"
             device="{{$device}}"
-        >
-            {{ $menu->name }}
-        </x-menu-link>
+            type="link">{{ $menu->name }}</x-menu-link>
     @endforeach
 </nav>
