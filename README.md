@@ -117,6 +117,20 @@ ___
 Uso do "Stacked Layouts" gratuito do TailwindCss, personalização, remoção de itens não utilizados. Aplicação do {{slot}} e do menu.
 
 
+### 05 - Style the Currently Active Navigation Link
+>laracasts/example/resources/views/Components/menu.blade.php
+````
+<x-menu-link
+            href="/{{ $menu->url }}"
+            :active="request()->routeIs($menu->url)"
+            device="{{$device}}"
+            type="div">{{ $menu->name }}</x-menu-link>
+
+````
+
+Uso de props :active para (':' p/ distinguir o tipo de dado) e da props device como simples string.
+
+Propagação de props em componentes filhos.
 
 
 

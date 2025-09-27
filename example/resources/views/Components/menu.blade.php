@@ -8,7 +8,8 @@
         <x-menu-link
             href="/{{ $menu->url }}"
             :active="request()->routeIs($menu->url)"
-            device="{{$device}}"
-            type="link">{{ $menu->name }}</x-menu-link>
+            device="{{$device}}">
+            {{ $menu->name }}
+        </x-menu-link>
     @endforeach
 </nav>
