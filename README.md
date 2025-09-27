@@ -127,11 +127,20 @@ Uso do "Stacked Layouts" gratuito do TailwindCss, personalização, remoção de
             type="div">{{ $menu->name }}</x-menu-link>
 
 ````
-
 Uso de props :active para (':' p/ distinguir o tipo de dado) e da props device como simples string.
 
 Propagação de props em componentes filhos.
 
+### 06 - View Data and Route Wildcards
+>laracasts/example/routes/web.php
+````
+Route::get('/job/{id}', function ($id) use ($jobs) {
+    $job = Arr::first($jobs, fn($job) => $job['id'] == $id);
+
+    return view('job', ['job' => $job]);
+});
+````
+Url com parâmetro e passagem de dados p/ view.
 
 
 ### 99 - Running
