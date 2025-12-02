@@ -1,168 +1,66 @@
-# [30 Days to Learn Laravel](https://laracasts.com/series/30-days-to-learn-laravel-11)
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-![image](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![image](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![image](https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![image](https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=Composer&logoColor=white)
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-### 01 - Hello, Laravel
+## About Laravel
 
-Extensões habilitadas no php.ini: **curl, fileinfo, mbstring, openssl, pdo_sqlite**
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-Instalar o [Composer](https://getcomposer.org/)
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Instalar o laravel (cli)
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-`$ composer global require "laravel/installer"`
+## Learning Laravel
 
-Novo projeto laravel
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-`$ laravel new example`
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-    Starter kit: [none]
-    Testing framework: [Pest]
-    Database: [sqlite]
-    run npm install and npm run build? [yes]
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-Para testar:
+## Laravel Sponsors
 
-`$ cd example`
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-`$ php artisan serve`
+### Premium Partners
 
-INFO  Server running on [http://127.0.0.1:8000].
-___
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[WebReinvent](https://webreinvent.com/)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Jump24](https://jump24.co.uk)**
+- **[Redberry](https://redberry.international/laravel/)**
+- **[Active Logic](https://activelogic.com)**
+- **[byte5](https://byte5.de)**
+- **[OP.GG](https://op.gg)**
 
-### 02 - Your First Route and View
+## Contributing
 
->laracasts/example/routes/web.php
-````
-Route::get('/', function () {
-    return view('welcome');
-});
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-````
+## Code of Conduct
 
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
->laracasts/example/resources/views/welcome.blade.php
-````
-<html>
-    <head></head>
-    <body>
-        <h1>Hello, world</h1>
-    </body>
-</html>
+## Security Vulnerabilities
 
-````
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-Testes de rotas com retorno de string, array e de view().
->laracasts/example/routes/web.php
-````
-//Return string Foo, bar
-Route::get('/string', function () {
-    return 'Foo, bar';
-});
+## License
 
-//Return json {"foo":"bar"} with content-type: application/json
-Route::get('/array', function () {
-    return ['foo' => 'bar'];
-});
-
-````
-
-Arrays são convertidos para json no response.
-___
-
-### 03 - Create a Layout File Using Laravel Components
-
->laracasts/example/resources/views/Components/layout.blade.php
-````
-<html>
-    <head></head>
-    <body>
-        <x-menu />
-
-        <?php echo $slot;?> --> PHP
-        ou
-        {{$slot}} --> recurso do blade
-    </body>
-</html>
-
-````
-
->laracasts/example/resources/views/home.blade.php
-````
-<x-layout> --> recurso do blade
-    <h1>Home page</h1> --> slot inserido no template layout
-</x-layout>
-
-````
-___
-
-### 04 - Make a Pretty Layout Using TailwindCSS
->laracasts/example/resources/views/Components/layout.blade.php
-````
-<html class="h-full bg-gray-100">
-    <head>
-        ... head content
-
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body class="h-full">
-        ...
-    </body>
-</html>
-
-````
-Uso do "Stacked Layouts" gratuito do TailwindCss, personalização, remoção de itens não utilizados. Aplicação do {{slot}} e do menu.
-
-
-### 05 - Style the Currently Active Navigation Link
->laracasts/example/resources/views/Components/menu.blade.php
-````
-<x-menu-link
-            href="/{{ $menu->url }}"
-            :active="request()->routeIs($menu->url)"
-            device="{{$device}}"
-            type="div">{{ $menu->name }}</x-menu-link>
-
-````
-Uso de props :active para (':' p/ distinguir o tipo de dado) e da props device como simples string.
-
-Propagação de props em componentes filhos.
-
-### 06 - View Data and Route Wildcards
->laracasts/example/routes/web.php
-````
-Route::get('/job/{id}', function ($id) use ($jobs) {
-    $job = Arr::first($jobs, fn($job) => $job['id'] == $id);
-
-    return view('job', ['job' => $job]);
-});
-````
-Url com parâmetro e passagem de dados p/ view.
-
-
-### 99 - Running
-````
-#Install Composer dependencies
-> composer install
-
-#Create and configure the .env file:
-> cp .env.example .env
-
-#Generate an application key: Laravel requires an application key for security.
-> php artisan key:generate
-
-#Run database migrations (if applicable)
-> php artisan migrate
-
-#Seed the database (optional)
-> php artisan db:seed
-
-#Link storage (optional, for file uploads)
-> php artisan storage:link
-
-#Start the local development server
-> php artisan serve
-````
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
