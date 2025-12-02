@@ -12,6 +12,9 @@ Route::get('/home', function () {
 })->name('home');
 
 Route::get('/jobs', function () {
+//     Job::create(['title' => 'Director', 'salary' => 'R$ 10.000,00']);
+//     Job::create(['title' => 'Developer', 'salary' => 'R$ 8.000,00']);
+//     Job::create(['title' => 'Designer', 'salary' => 'R$ 6.000,00']);
     return view('jobs', [
         'jobs' => Job::all()
     ]);
