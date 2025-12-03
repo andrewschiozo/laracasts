@@ -11,22 +11,26 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+// Index
 Route::get('/jobs', function () {
     return view('jobs.index', [
         'jobs' => Job::with('employer')->latest()->simplePaginate(perPage: 6)
     ]);
 })->name('jobs');
 
+// Create
 Route::get('/jobs/create', function () {
     return view('jobs.create');
 });
 
+// Show
 Route::get('/job/{id}', function ($id) {
     $job = Job::find($id);
 
     return view('jobs.show', ['job' => $job]);
 });
 
+// Store
 Route::post('/jobs', function () {
     request()->validate([
         'title' => ['required', 'min:3'],
@@ -41,6 +45,42 @@ Route::post('/jobs', function () {
 
     return redirect('/jobs');
 });
+
+// Edit
+Route::get('/job/{id}/edit', function ($id) {
+    $job = Job::find($id);
+
+    return view('jobs.edit', ['job' => $job]);
+});
+
+// Update
+Route::patch('/job/{id}', function ($id) {
+    request()->validate([
+        'title' => ['required', 'min:3'],
+        'salary' => ['required'],
+    ]);
+
+    //authorize (On hold...)
+
+    $job = Job::findOrFail($id);
+
+    $job->update([
+        'title'=> request('title'),
+        'salary' => request('salary'),
+    ]);
+
+    return redirect('/job/' . $job->id);
+});
+
+// Destroy
+Route::delete('/job/{id}', function ($id) {
+    // authorize (On hold...)
+    $job = Job::findOrFail($id);
+    $job->delete();
+
+    return redirect('/jobs');
+});
+
 
 //Return about page
 Route::get('/about', function () {
