@@ -13,7 +13,7 @@ Route::get('/home', function () {
 
 Route::get('/jobs', function () {
     return view('jobs.index', [
-        'jobs' => Job::with('employer')->latest()->simplePaginate(10)
+        'jobs' => Job::with('employer')->latest()->simplePaginate(perPage: 6)
     ]);
 })->name('jobs');
 
@@ -28,7 +28,10 @@ Route::get('/job/{id}', function ($id) {
 });
 
 Route::post('/jobs', function () {
-    //validation...
+    request()->validate([
+        'title' => ['required', 'min:3'],
+        'salary' => ['required'],
+    ]);
 
     Job::create([
         'title' => request('title'),
