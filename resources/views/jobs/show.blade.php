@@ -10,6 +10,6 @@
     </p>
 
     <p class="mt-4">
-        <x-button href="/job/{{ $job->id }}/edit">Edit Job</x-button>
+        <x-button href="/jobs/{{ $job->id }}/edit">Edit Job</x-button>
     </p>
 </x-layout>
