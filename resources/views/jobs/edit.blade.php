@@ -1,9 +1,10 @@
-<x-layout pageTitle="Jobs">
+<x-layout-auth pageTitle="Jobs">
     <x-slot:pageHeading>
         Edit Job {{  $job->title }}
     </x-slot:pageHeading>
 
-    <form method="POST" action="/jobs/{{ $job->id }}">
+    <!-- <form method="POST" action="/jobs/{{ $job->id }}"> -->
+    <form method="POST" action="{{ route('jobs.update', $job) }}">
         @csrf
         @method('PATCH')
         <div class="space-y-6 p-6 bg-white">
@@ -28,4 +29,4 @@
         @csrf
         @method('DELETE')
     </form>
-</x-layout>
+</x-layout-auth>

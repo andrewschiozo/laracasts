@@ -1,4 +1,4 @@
-<x-layout pageTitle="Register" pageHeading="Register">
+<x-layout-guest pageTitle="Register" pageHeading="Register">
     <div class="flex justify-center">
         <div class="w-full sm:max-w-md mt-6 px-6 py-6 bg-white shadow-md overflow-hidden sm:rounded-lg">
             <!-- <div> -->
@@ -61,4 +61,4 @@
             </form>
         </div>
     </div>
-</x-layout>
+</x-layout-guest>

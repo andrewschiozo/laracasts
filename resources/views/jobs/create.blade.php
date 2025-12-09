@@ -1,18 +1,18 @@
-<x-layout pageTitle="Jobs">
+<x-layout-auth pageTitle="Jobs">
     <x-slot:pageHeading>
         Create Job
     </x-slot:pageHeading>
 
-    <form method="POST" action="/jobs">
+    <form method="POST" action="{{ route('jobs.store') }}">
         @csrf
         <div class="space-y-6 p-6 bg-white">
 
             @include('jobs.partials.form-fields')
 
             <div class=" flex items-center justify-end gap-x-6">
-                <x-button href="/jobs">Cancel</x-button>
+                <x-button href="{{ route('jobs') }}">Cancel</x-button>
                 <x-primary-button>Save</x-primary-button>
             </div>
         </div>
     </form>
-</x-layout>
+</x-layout-auth>
