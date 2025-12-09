@@ -7,7 +7,7 @@
             type="text"
             name="title"
             placeholder="Shift Leader"
-            value="{{ $job->title ?? '' }}"
+            value="{{ old('title', $job->title ?? '') }}"
             required />
         @error('title')
         <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
@@ -22,7 +22,7 @@
             type="text"
             name="salary"
             placeholder="$ 50,000 Per Year"
-            value="{{ $job->salary ?? '' }}"
+            value="{{ old('salary', $job->salary ?? '') }}"
             required />
         @error('salary')
         <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>

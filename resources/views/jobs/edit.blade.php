@@ -13,7 +13,7 @@
             <div class="flex items-center justify-between gap-x-6">
                 <div class="dlex items-center">
                     <!-- <button form="delete-form" class="text-red-500 text-sm font-bold">Delete</button> -->
-                    <x-button form="delete-form" class="text-red-500 text-sm font-bold">Delete</x-button>
+                    <x-button type="button" form="delete-form" class="text-red-500 hover:text-white hover:bg-red-500 text-sm font-bold">Delete</x-button>
                 </div>
 
                 <div class="flex items-center gap-x-6">
